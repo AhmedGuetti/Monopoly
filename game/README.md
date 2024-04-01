@@ -1,2 +1,0 @@
-# Monopoly
-Monopoly simulation CLI 

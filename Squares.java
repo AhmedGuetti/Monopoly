@@ -15,6 +15,9 @@ abstract class Squares {
 
     public String getName() {return name;}
     public int getPosition() {return position;}
+    public String getPseudo() {
+        return pseudo;
+    }
     
     public void print(Player player){
         if(player == null)
