@@ -9,8 +9,7 @@ public class Jail extends Squares {
 
     @Override
     public void task(Player player) {
-        player.setPosition(10);
-        player.setInJailCount(2);
+        // jsut visiting
     }
 
     @Override

@@ -7,9 +7,8 @@ public class Chance extends Squares {
             "Bank pays you dividend of $50",
             "Go directly to Jail (Do not pass Go, Do not collect $200)",
             "Collect a random number of money",
-
     };
-
+    
     private Random random;
 
     private String chanceCardSelected = "";

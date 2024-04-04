@@ -1,4 +1,4 @@
-public class RailRoad extends Squares {
+public class RailRoad extends Squares implements Comparable<RailRoad> {
 
     private Player owner;
     private final int price = 200;
@@ -19,6 +19,15 @@ public class RailRoad extends Squares {
 
     public void setOwner(Player owner) {
         this.owner = owner;
+    }
+    
+    public int getPrice() {
+        return price;
+    }
+
+
+    public Player getOwner() {
+        return owner;
     }
 
     public boolean buyRailRoad(Player player) {
@@ -68,5 +77,10 @@ public class RailRoad extends Squares {
     public String toString() {
         return "RailRoad{ name =" + name + ",owner=" + owner + ", price=" + price + ", rent=" + rent + ", rent1="
                 + rent1 + ", rent2=" + rent2 + ", rent3=" + rent3 + '}';
+    }
+
+    @Override
+    public int compareTo(RailRoad o) {
+        return Integer.compare(o.price, this.price);
     }
 }

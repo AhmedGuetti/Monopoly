@@ -25,6 +25,25 @@ public enum Tokens {
         }
     }
 
+    public static Tokens fromNumber(int s) {
+        switch (s) {
+            case 1:
+                return Car;
+            case 2:
+                return Cat;
+            case 3:
+                return Hat;
+            case 4:
+                return Dog;
+            case 5:
+                return Timble;
+            case 6:
+                return Cannon;
+            default:
+                throw new IllegalArgumentException("Invalid token: " + s);
+        }
+    }
+
     public static String toStringo(Tokens t) {
         switch (t) {
             case Car:

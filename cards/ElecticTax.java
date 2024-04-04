@@ -27,7 +27,7 @@ public class ElecticTax extends Squares {
 
     private int calculateElectricTax(Player player) {
 
-        ArrayList<Squares> squares = player.getProperties();
+        ArrayList<TitleDeed> squares = player.getProperties();
 
         int amountToPay = 0;
 

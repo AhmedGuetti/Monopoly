@@ -9,7 +9,8 @@ public class GoToJail extends Squares{
 
     @Override
     public void task(Player player) {
-        player.goToJail();
+        player.setPosition(10);
+        player.setInJailCount(2);
     }
 
     @Override

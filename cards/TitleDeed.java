@@ -1,18 +1,20 @@
 import java.util.HashMap;
 
-public class TitleDeed extends Squares {
+public class TitleDeed extends Squares implements Comparable<TitleDeed> {
     // String: name of the square, <Interger: ,Integer: total number of same square>
     private static HashMap<String, Integer> tableSquare = new HashMap<String, Integer>();
     final static int PRICEMULTIPLAYER[] = { 1, 5, 15, 45, 80 };
     private Player owner;
     private int hoteles = 0;
     private int houses = 0;
+    private int propertyPrice;
     private int rentPrice;
     private int hotelRentPrice = 0;
 
-    TitleDeed(int position, String name, int rentPrice, int hotelRentPrice, String pseudo) {
+    TitleDeed(int position, String name,int propertyPrice, int rentPrice, int hotelRentPrice, String pseudo) {
         super(position, name, pseudo);
         this.rentPrice = rentPrice;
+        this.propertyPrice = propertyPrice;
         this.hotelRentPrice = hotelRentPrice;
         if (tableSquare.containsKey(name))
             tableSquare.put(name, tableSquare.get(name) + 1);
@@ -31,14 +33,45 @@ public class TitleDeed extends Squares {
         return this.hoteles;
     }
 
+    public int compareTo(TitleDeed other) {
+        return Integer.compare( other.propertyPrice,this.propertyPrice);
+    }
+
+
+    public int getRentPrice() {
+        return rentPrice;
+    }
+
+    public int getHoteles() {
+        return hoteles;
+    }
+
+    public int getHotelRentPrice() {
+        return hotelRentPrice;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public int getPropertyPrice() {
+        return propertyPrice;
+    }
+
     public int getHouse() {
         return this.houses;
     }
 
+    public void setOwner(Player owner) {
+        this.owner = owner;
+    }
+
+    
+
     public void task(Player player) {
         if (this.owner == null) {
             // can buy
-            if (player.getMoney() > this.rentPrice) {
+            if (player.getMoney() > this.propertyPrice) {
 
                 char answer = 'R';
                 do {
@@ -48,12 +81,10 @@ public class TitleDeed extends Squares {
                 if (answer == 'Y' || answer == 'y') {
                     this.owner = player;
                     player.addProperty(this);
-                    player.descreaseMoney(this.rentPrice);
+                    player.descreaseMoney(this.propertyPrice);
                 }
-                // player.addProperty(this);
             }
 
-            // player.addProperty(this);
         } else if (owner.compareTo(player) == 0) {
             // You should pay
             int pay = rentPrice * PRICEMULTIPLAYER[houses];
@@ -114,5 +145,4 @@ public class TitleDeed extends Squares {
                 + ", rentPrice=" + rentPrice
                 + "]";
     }
-
 }

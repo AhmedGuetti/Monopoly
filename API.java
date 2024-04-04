@@ -44,6 +44,18 @@ public class API {
         return scanner.next().charAt(0);
     }
 
+    public static int QuestionNumvber(String question) {
+        System.out.println(question);
+        System.out.print(":: => ");
+        return scanner.nextInt();
+    }
+
+    public static String QuestionString(String question) {
+        System.out.println(question);
+        System.out.print(":: => ");
+        return scanner.next();
+    }
+
     public static void printMessage(String message) {
         System.out.print(message);
     }
