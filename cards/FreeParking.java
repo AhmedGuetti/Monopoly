@@ -1,4 +1,3 @@
-
 public class FreeParking extends Squares {
 
     FreeParking(int position, String name, String pseudo) {

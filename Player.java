@@ -1,8 +1,10 @@
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
+
 
 class Player implements Comparable<Player> {
 
@@ -38,6 +40,11 @@ class Player implements Comparable<Player> {
     public void setIndex(int index) {
         this.index = index;
     }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
 
     public void addRailRoad(RailRoad square) {
         this.railRoads.add(square);
@@ -189,6 +196,7 @@ class Player implements Comparable<Player> {
 
     public void goToJail() {
         this.position = 10;
+        this.inJailCount = 2;
     }
 
   

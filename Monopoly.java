@@ -16,6 +16,6 @@ public class Monopoly {
         } catch (Exception ex) {
             System.out.println("Error playing audio file: " + ex.getMessage());
         }
-        Board.startGame();
+        API.startGame();
     }
 }

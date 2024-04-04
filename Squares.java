@@ -1,5 +1,6 @@
 
 
+
 abstract class Squares {
     
     public int position;

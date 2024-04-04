@@ -1,3 +1,4 @@
+
 public class RailRoad extends Squares implements Comparable<RailRoad> {
 
     private Player owner;

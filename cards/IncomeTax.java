@@ -1,4 +1,3 @@
-
 public class IncomeTax extends Squares {
 
     private final int incomeTaxRate = 17;
